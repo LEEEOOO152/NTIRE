@@ -2,5 +2,6 @@ LlamaFactory
 images/train/images
 images/validation/images
 images/test/images
-json/outputs
+json/outputs/*.json
+json/outputs/*.jsonl
 models

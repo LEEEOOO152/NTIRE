@@ -1,7 +1,7 @@
 ## 〇、配置LlamaFactory
 ```bash
 git clone --depth 1 https://github.com/hiyouga/LlamaFactory.git
-conda env create -f ./config/environment.yml #### 缺少cv2等。。
+conda env create -f ./config/environment.yml 
 conda activate lmf
 ```
 
@@ -21,7 +21,7 @@ python ./src/preproc/run_full_pipeline.py \
 2. 数据集配置：填写以下字段到`LlamaFactory\data\dataset_info.json`
 ```
 "ForPhase1_100_aug8_crops_6times_clean": {
-    "file_name": "aug8_swap_crop6_clean.json",
+    "file_name": "../../json/output/aug8_swap_crop6_clean.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "conversations",
@@ -36,10 +36,12 @@ python ./src/preproc/run_full_pipeline.py \
     }
   },
 ```
+或请在`file_name`填入`aug8_swap_crop6_clean.json`的绝对路径
 
-3. 启动训练：拷贝`config/training_args.yaml`到`LlamaFactory/examples/train_lora`下面
+3. 启动训练
 ```bash
 cd LlamaFactory
+ln -s ../images images
 lmf train ../config/training_args.yaml
 ```
 开启训练
