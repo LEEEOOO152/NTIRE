@@ -1,0 +1,1736 @@
+[
+    {
+        "id": "AGIQA1K_inf_0",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_000_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_000_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_1",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_001_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_001_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_2",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_002_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_002_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_3",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_003_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_003_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_4",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_004_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_004_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_5",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_005_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_005_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_6",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_006_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_006_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_7",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_007_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_007_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_8",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_008_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_008_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_9",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_009_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_009_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_10",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_010_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_010_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_11",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_011_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_011_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_12",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_012_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_012_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_13",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_013_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_013_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_14",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_014_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_014_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_15",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_015_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_015_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_16",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_016_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_016_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_17",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_017_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_017_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_18",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_018_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_018_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_19",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_019_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_019_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_20",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_020_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_020_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_21",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_021_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_021_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_22",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_022_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_022_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_23",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_023_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_023_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_24",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_024_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_024_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_25",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_025_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_025_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_26",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_026_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_026_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_27",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_027_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_027_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_28",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_028_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_028_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_29",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_029_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_029_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_30",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_030_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_030_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_31",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_031_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_031_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_32",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_032_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_032_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_33",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_033_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_033_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_34",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_034_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_034_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_35",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_035_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_035_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_36",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_036_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_036_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_37",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_037_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_037_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_38",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_038_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_038_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_39",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_039_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_039_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_40",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_040_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_040_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_41",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_041_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_041_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_42",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_042_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_042_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_43",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_043_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_043_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_44",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_044_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_044_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_45",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_045_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_045_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_46",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_046_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_046_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_47",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_047_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_047_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_48",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_048_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_048_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_49",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_049_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_049_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_50",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_050_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_050_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_51",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_051_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_051_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_52",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_052_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_052_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_53",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_053_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_053_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_54",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_054_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_054_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_55",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_055_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_055_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_56",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_056_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_056_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_57",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_057_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_057_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_58",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_058_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_058_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_59",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_059_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_059_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_60",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_060_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_060_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_61",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_061_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_061_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_62",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_062_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_062_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_63",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_063_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_063_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_64",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_064_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_064_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_65",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_065_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_065_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_66",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_066_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_066_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_67",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_067_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_067_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_68",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_068_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_068_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_69",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_069_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_069_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_70",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_070_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_070_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_71",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_071_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_071_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_72",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_072_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_072_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_73",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_073_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_073_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_74",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_074_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_074_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_75",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_075_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/p_075_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_76",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_000_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_000_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_77",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_001_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_001_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_78",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_002_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_002_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_79",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_003_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_003_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_80",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_004_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_004_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_81",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_005_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_005_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_82",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_006_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_006_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_83",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_007_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_007_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_84",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_008_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_008_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_85",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_009_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_009_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_86",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_011_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_011_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_87",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_012_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_012_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_88",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_013_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_013_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_89",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_014_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_014_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_90",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_015_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_015_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_91",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_016_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_016_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_92",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_017_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_017_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_93",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_019_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_019_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_94",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_020_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_020_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_95",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_021_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_021_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_96",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_022_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_022_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_97",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_023_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_023_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_98",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_024_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_024_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_99",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_025_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_025_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_100",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_026_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_026_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    },
+    {
+        "id": "AGIQA1K_inf_101",
+        "image": [
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_028_merged_c0.jpg",
+            "/public/home/mozhu/IQAdatasets/ForPhase2/images/s_028_merged_c1.jpg"
+        ],
+        "conversations": [
+            {
+                "from": "system",
+                "value": "You are an expert in Image Quality Assessment (IQA). Compare the two images (Image A on the left, Image B on the right) provided. Analyze the differences in detail (texture, noise, sharpness, etc.) using the <thinking>...</thinking> format, and finally provide a conclusion in <answer>A/B</answer>."
+            },
+            {
+                "from": "human",
+                "value": "<image><image>\nPlease compare the following image pairs. The first pair is the global view, followed by detailed crops."
+            }
+        ]
+    }
+]
