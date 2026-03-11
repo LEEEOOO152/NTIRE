@@ -92,38 +92,32 @@ def process_single_aug_sample(ori_sample):
             old_gpt_text = conv["value"]
             new_gpt_text = swap_gpt_text(old_gpt_text)
             conv["value"] = new_gpt_text
-            # 修复f-string反斜杠错误：提前处理换行符替换，抽成单独变量
             old_text_show = old_gpt_text.strip().replace('\n', ' ')
             new_text_show = new_gpt_text.strip().replace('\n', ' ')
-            # 打印清晰的替换对比，直接验证效果（无换行符，日志更整洁）
             print(f"\n=====================================")
             print(f"样本[{ori_sample['id']}] GPT文本替换对比：")
             print(f"【原内容】：{old_text_show}")
             print(f"【新内容】：{new_text_show}")
             print(f"=====================================\n")
-    
-        # 3. 处理互换路径后的图片：左右半边互换+保存+更新新路径
-        new_img_paths = []
-        for raw_img_path in aug_sample["image"]:
-            # 保留相对目录（若超出预期目录则只用文件名），并规范化避免出现 ../
-            try:
-                rel_img_path = os.path.relpath(raw_img_path, REL_BASE)
-                if rel_img_path.startswith(".."):
-                    rel_img_path = os.path.basename(raw_img_path)
-            except ValueError:
+
+    # 3. 处理互换路径后的图片：左右半边互换+保存+更新新路径
+    new_img_paths = []
+    for raw_img_path in aug_sample["image"]:
+        try:
+            rel_img_path = os.path.relpath(raw_img_path, REL_BASE)
+            if rel_img_path.startswith(".."):
                 rel_img_path = os.path.basename(raw_img_path)
+        except ValueError:
+            rel_img_path = os.path.basename(raw_img_path)
 
         rel_dir, file_name = os.path.split(rel_img_path)
         name, ext = os.path.splitext(file_name)
         new_name = f"{name}_swap{ext}"
 
-        # 规范路径，去掉可能的 ../
         save_img_path = os.path.normpath(os.path.join(SAVE_IMG_ROOT, rel_dir, new_name))
-
-        # 互换图片并保存
         swap_img_half(raw_img_path, save_img_path)
         new_img_paths.append(save_img_path)
-    # 更新扩充样本的图片路径为互换后的新路径
+
     aug_sample["image"] = new_img_paths
     
     # 4. 重命名扩充样本ID，添加_aug后缀，避免与原样本ID重复

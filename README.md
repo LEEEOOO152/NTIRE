@@ -1,25 +1,27 @@
 ## 〇、配置LlamaFactory
 ```bash
 git clone --depth 1 https://github.com/hiyouga/LlamaFactory.git
-cd LlamaFactory
-conda env create -f ../config/environment.yml #### 缺少cv2等。。
+conda env create -f ./config/environment.yml #### 缺少cv2等。。
+conda activate lmf
 ```
 
-## 一、数据预处理、配置与训练
+## 一、数据预处理、配置与训练(可选)
 1. 数据预处理与增强：拷贝训练数据集的`images`文件夹到 `data/train` 下，运行：
 ```bash
-python ./src/preproc/run_full_pipeline.py `
-  --input_json json/original/train_grpo_1536_converted.json `
-  --output_dir data/train/processed `
-  --local_image_root data/train/images `
-  --json_final json/output/aug8_swap_crop6_clean.json
+python ./src/preproc/run_full_pipeline.py \
+  --input_json json/original/train_grpo_1536_converted.json \
+  --output_dir images/train/processed \
+  --local_image_root images/train/images \
+  --json_final json/output/aug8_swap_crop6_clean.json \
+  --num_variations 6 \
+  --groups 6
 ```
 获得处理后的图像以及json
 
 2. 数据集配置：填写以下字段到`LlamaFactory\data\dataset_info.json`
 ```
 "ForPhase1_100_aug8_crops_6times_clean": {
-    "file_name": "json/output/aug8_swap_crop6_clean.json",
+    "file_name": "aug8_swap_crop6_clean.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "conversations",
@@ -38,18 +40,18 @@ python ./src/preproc/run_full_pipeline.py `
 3. 启动训练：拷贝`config/training_args.yaml`到`LlamaFactory/examples/train_lora`下面
 ```bash
 cd LlamaFactory
-lmf train LlamaFactory/examples/train_lora/training_args.yaml
+lmf train ../config/training_args.yaml
 ```
 开启训练
 
 ## 二、推理
 1. 类似地，先对推理图像进行预处理
-拷贝validation的`image`文件夹到`data\validation`下面，运行
+拷贝validation的`image`文件夹到`data/validation`下面，运行
 ```bash
-python ./src/preproc/crop_and_json_pipeline.py `
-  --input json/original/inf_validation_phase2.json `
-  --output json/output/inf_validation_phase2_processed.json `
-  --outdir data/validation/processed `
+python ./src/preproc/crop_and_json_pipeline.py \
+  --input json/original/inf_validation_phase2.json \
+  --output json/output/inf_validation_phase2_processed.json \
+  --outdir data/validation/processed \
   --groups 1
 ```
 生成处理过后的图像和json
