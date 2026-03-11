@@ -77,6 +77,16 @@ def build_prompt(num_images: int) -> str:
     )
 
 
+def sync_prompt_tokens(value: str, num_images: int) -> str:
+    """Ensure the leading <image> tokens match the number of images."""
+    # Remove any existing leading tokens/newlines
+    cleaned = re.sub(r"^\s*(<image>)+\s*\n?", "", value, count=1)
+    tokens = "<image>" * num_images
+    if cleaned:
+        return f"{tokens}\n{cleaned.lstrip('\n ')}"
+    return tokens
+
+
 def process(input_path: Path, output_path: Path, output_dir: Path, crop_size: int, num_groups: int, num_crops_per_group: int) -> None:
     if not input_path.exists():
         raise FileNotFoundError(f"Input JSON not found: {input_path}")
@@ -137,9 +147,16 @@ def process(input_path: Path, output_path: Path, output_dir: Path, crop_size: in
                 print(f"Error processing image {main_img_path}: {e}")
 
         if not any_main_ok:
-            # Keep cleaned item without crops
+            # Keep cleaned item without crops, but still sync prompt tokens to image count
+            synced_convs = []
+            for msg in cleaned_conversations:
+                new_msg = msg.copy()
+                if new_msg.get('from') == 'user':
+                    new_msg['value'] = sync_prompt_tokens(new_msg.get('value', ''), len(image_paths))
+                synced_convs.append(new_msg)
+
             cleaned_item = item.copy()
-            cleaned_item['conversations'] = cleaned_conversations
+            cleaned_item['conversations'] = synced_convs
             new_data.append(cleaned_item)
             continue
 

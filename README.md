@@ -44,7 +44,7 @@ cd LlamaFactory
 ln -s ../images images
 lmf train ../config/training_args.yaml
 ```
-开启训练
+
 
 ## 二、推理
 1. 类似地，先对推理图像进行预处理
@@ -53,7 +53,7 @@ lmf train ../config/training_args.yaml
 python ./src/preproc/crop_and_json_pipeline.py \
   --input json/original/inf_validation_phase2.json \
   --output json/output/inf_validation_phase2_processed.json \
-  --outdir data/validation/processed \
+  --outdir images/validation/processed \
   --groups 1
 ```
 生成处理过后的图像和json
@@ -80,7 +80,7 @@ python "src/inf/inf_dataset_cvpr_submission_batch.py" \
 
 ```bash
 python ./src/inf/fuse_and_fix.py `
-  --ckpt_paths "src\inf\validation_template.jsonl" `
+  --ckpt_paths "src/inf/validation_template.jsonl" `
                "" `
   --ckpt_weights "0,1" `
   --out_fused "json/output/fused_intermediate.jsonl" `
