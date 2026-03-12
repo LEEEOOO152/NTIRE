@@ -224,11 +224,15 @@ def fuse_records(
     return fused
 
 
-def apply_fused_to_ckpt1(ckpt1: List[Dict[str, Any]], fused: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def apply_fused_to_ckpt1(
+    ckpt1: List[Dict[str, Any]],
+    fused: List[Dict[str, Any]],
+    order_insensitive: bool,
+) -> List[Dict[str, Any]]:
     fused_map = {tuple(rec["images"]): rec["fused_answer"] for rec in fused}
     updated: List[Dict[str, Any]] = []
     for idx, rec in enumerate(ckpt1):
-        key = images_key(rec)
+        key = images_key(rec, order_insensitive)
         if key not in fused_map:
             raise KeyError(f"No fused result found for ckpt1 record at index {idx}")
         new_rec = dict(rec)
@@ -529,7 +533,7 @@ def main() -> None:
         order_insensitive=args.order_insensitive,
         weights=weights,
     )
-    updated_ckpt1 = apply_fused_to_ckpt1(records[0], fused)
+    updated_ckpt1 = apply_fused_to_ckpt1(records[0], fused, args.order_insensitive)
     save_jsonl(updated_ckpt1, args.out_fused)
 
     fixed_records, stats = fix_thinking_records(updated_ckpt1)
