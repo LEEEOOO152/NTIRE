@@ -46,7 +46,7 @@ lmf train ../config/training_args.yaml
 ```
 
 
-## 二、推理
+## 二、推理(Validation阶段)
 1. 类似地，先对推理图像进行预处理
 拷贝validation的`image`文件夹到`data/validation`下面，运行
 ```bash
@@ -60,20 +60,18 @@ python ./src/preproc/crop_and_json_pipeline.py \
 
 2. 生成仅answer
 ```bash
-python "src/inf/inf_dataset_cvpr_submission_batch.py" \
-  --base_model Qwen/Qwen3-VL-8B-Instruct \
-  --checkpoint_dir models/ \ 
-  --test_json json/output/inf_validation_phase2_processed.json \
-  --batch_size 4 \
-  --num_gpus 2 \
-  --use_lora \
-  --min_ckpt_step 960 \
-  --ckpt_interval 30 \
-  --out_prefix myrun \
-  --temperature 1e-6 \
-  --top_p 1.0 \
-  --max_new_tokens 512
-  --out_dir json/output
+python src/inf/inf_dataset_cvpr_submission_batch.py `
+  --base-model-name "Qwen/Qwen3-VL-8B-Instruct" `
+  --checkpoint-dir "models" `
+  --test-json-path "json/output/inf_validation_phase2_processed.json" `
+  --batch-size 4 `
+  --num-gpus 2 `
+  --max-pixels 3538944 `
+  --min-pixels 784 `
+  --use-lora `
+  --min-checkpoint-step 960 `
+  --checkpoint-step-interval 30 `
+  --submission-suffix "validation"
 ```
 
 3. 融合thinking与answer
@@ -84,7 +82,49 @@ python ./src/inf/fuse_and_fix.py `
                "" `
   --ckpt_weights "0,1" `
   --out_fused "json/output/fused_intermediate.jsonl" `
-  --out_fixed "json/output/fused_and_fixed.jsonl" `
+  --out_fixed "json/output/fused_and_fixed_validation.jsonl" `
+  --remove_crops `
+  --order_insensitive `
+  --strict_images
+```
+
+## 三、推理(Test阶段)
+1. 类似地，先对推理图像进行预处理
+拷贝test的`image`文件夹到`data/test`下面，运行
+```bash
+python ./src/preproc/crop_and_json_pipeline.py \
+  --input json/original/inf_final.json \
+  --output json/output/inf_final_processed.json \
+  --outdir images/test/processed \
+  --groups 1
+```
+生成处理过后的图像和json
+
+2. 生成仅answer
+```bash
+python src/inf/inf_dataset_cvpr_submission_batch.py `
+  --base-model-name "Qwen/Qwen3-VL-8B-Instruct" `
+  --checkpoint-dir "models" `
+  --test-json-path "json/output/inf_final_processed.json" `
+  --batch-size 4 `
+  --num-gpus 2 `
+  --max-pixels 3538944 `
+  --min-pixels 784 `
+  --use-lora `
+  --min-checkpoint-step 960 `
+  --checkpoint-step-interval 30 `
+  --submission-suffix "test"
+```
+
+3. 融合thinking与answer
+
+```bash
+python ./src/inf/fuse_and_fix.py `
+  --ckpt_paths "src/inf/test_template.jsonl" `
+               "" `
+  --ckpt_weights "0,1" `
+  --out_fused "json/output/fused_intermediate.jsonl" `
+  --out_fixed "json/output/fused_and_fixed_test.jsonl" `
   --remove_crops `
   --order_insensitive `
   --strict_images

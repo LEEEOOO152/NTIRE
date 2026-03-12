@@ -73,7 +73,8 @@ def build_prompt(num_images: int) -> str:
     return (
         f"{image_tokens}\n"
         "The images provided include global views and detailed crop views. "
-        "Please compare the image pair (Left vs Right) by analyzing global consistency and local details."
+        # "Please compare the image pair (Left vs Right) by analyzing global consistency and local details."
+        "The images are presented in the following order:\n1. Global view of the first section (Uncropped).\n2-5. Detailed crops of the first section.\n6. Global view of the second section (Cropped).\n7-10. Detailed crops of the second section.\nPlease compare the image pair (Left vs Right) by analyzing global consistency and local details."
     )
 
 
@@ -83,7 +84,8 @@ def sync_prompt_tokens(value: str, num_images: int) -> str:
     cleaned = re.sub(r"^\s*(<image>)+\s*\n?", "", value, count=1)
     tokens = "<image>" * num_images
     if cleaned:
-        return f"{tokens}\n{cleaned.lstrip('\n ')}"
+        cleaned_stripped = cleaned.lstrip("\n ")
+        return f"{tokens}\n{cleaned_stripped}"
     return tokens
 
 
@@ -107,10 +109,12 @@ def process(input_path: Path, output_path: Path, output_dir: Path, crop_size: in
         item_id = item.get('id')
         conversations = item.get('conversations', [])
 
-        # Clean thinking tags in-place
+        # Clean thinking tags in-place and normalize "from":"user" -> "from":"human"
         cleaned_conversations = []
         for msg in conversations:
             new_msg = msg.copy()
+            if new_msg.get('from') == 'user':
+                new_msg['from'] = 'human'
             if isinstance(new_msg.get('value'), str):
                 new_msg['value'] = strip_thinking(new_msg['value'])
             cleaned_conversations.append(new_msg)
@@ -151,7 +155,7 @@ def process(input_path: Path, output_path: Path, output_dir: Path, crop_size: in
             synced_convs = []
             for msg in cleaned_conversations:
                 new_msg = msg.copy()
-                if new_msg.get('from') == 'user':
+                if new_msg.get('from') in ('user', 'human'):
                     new_msg['value'] = sync_prompt_tokens(new_msg.get('value', ''), len(image_paths))
                 synced_convs.append(new_msg)
 
@@ -169,7 +173,7 @@ def process(input_path: Path, output_path: Path, output_dir: Path, crop_size: in
             new_conversations = []
             for msg in cleaned_conversations:
                 new_msg = msg.copy()
-                if new_msg.get('from') == 'user':
+                if new_msg.get('from') in ('user', 'human'):
                     new_msg['value'] = prompt
                 # others already cleaned
                 new_conversations.append(new_msg)

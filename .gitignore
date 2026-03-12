@@ -4,4 +4,4 @@ images/validation/images
 images/test/images
 json/outputs/*.json
 json/outputs/*.jsonl
-models
+models/checkpoint-960

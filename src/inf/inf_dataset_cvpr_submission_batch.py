@@ -9,45 +9,41 @@ from torch.multiprocessing import Process, Manager, set_start_method
 from transformers import AutoModelForImageTextToText, AutoProcessor
 from peft import PeftModel
 
-# ================= 默认配置（可被 CLI 覆盖） =================
-DEFAULT_BASE_MODEL = "/public/home/mozhu/.cache/modelscope/hub/models/Qwen/Qwen3-VL-8B-Instruct"
-DEFAULT_CHECKPOINT_DIR = "/public/home/mozhu/LLaMA-Factory/saves/Qwen3-VL-8B-Instruct/lora/train_2026-03-09-08-23-34"
-DEFAULT_TEST_JSON = "/public/home/mozhu/IQAdatasets/ForPhase2/inf_validation_phase2_crops.json"
-DEFAULT_BATCH_SIZE = 4
-DEFAULT_NUM_GPUS = 2
-DEFAULT_MAX_PIXELS = 3538944
-DEFAULT_MIN_PIXELS = 784
-DEFAULT_USE_LORA = True
-DEFAULT_MIN_CKPT_STEP = 990
-DEFAULT_CKPT_INTERVAL = 30
-DEFAULT_OUT_PREFIX = "aug8_crops6_clean"
-DEFAULT_OUTPUT_DIR = "."
-DEFAULT_TEMPERATURE = 1e-6
-DEFAULT_TOP_P = 1.0
-DEFAULT_MAX_NEW_TOKENS = 512
+# ================= 配置区 =================
+base_model_name = "/public/home/mozhu/.cache/modelscope/hub/models/Qwen/Qwen3-VL-8B-Instruct"
+# base_model_name = "/public/home/mozhu/.cache/modelscope/hub/models/Qwen/Qwen3.5-9B-Base"
+checkpoint_dir = "/public/home/mozhu/LLaMA-Factory/saves/Qwen3-VL-8B-Instruct/lora/train_2026-03-02-10-38-11"
+# checkpoint_dir = "/public/home/mozhu/LLaMA-Factory/saves/Qwen3-VL-8B-Instruct/lora/train_2026-03-10-15-32-08"
+# 修改为实际的测试集路径 
+test_json_path = "/public/home/mozhu/IQAdatasets/ForPhase3/inf_final_crops_shortprompt.json" 
+# test_json_path = "/public/home/mozhu/IQAdatasets/ForPhase2/inf_validation_phase2_crops.json"
+BATCH_SIZE = 4   #####
+NUM_GPUS = 2      ####
+MAX_pixels = 3538944  # 224*224，严格对齐训练参数
+MIN_pixels = 784
+
+# 是否加载 LoRA。若为 False，则直接使用基座模型，不加载任何 checkpoint。
+USE_LORA = True
+
+min_checkpoint_step = 960  # 从这个 step 开始测试 (包含)
+checkpoint_step_interval = 30  # 每隔多少 step 取一个 checkpoint
+# ==========================================
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Batch inference with optional LoRA checkpoints (multi-GPU).")
-    parser.add_argument("--base_model", default=DEFAULT_BASE_MODEL, help="Base model name or path")
-    parser.add_argument("--checkpoint_dir", default=DEFAULT_CHECKPOINT_DIR, help="LoRA checkpoints root directory")
-    parser.add_argument("--test_json", default=DEFAULT_TEST_JSON, help="Test JSON path")
-    parser.add_argument("--batch_size", type=int, default=DEFAULT_BATCH_SIZE, help="Batch size per process")
-    parser.add_argument("--num_gpus", type=int, default=DEFAULT_NUM_GPUS, help="Number of GPUs / processes")
-    parser.add_argument("--max_pixels", type=int, default=DEFAULT_MAX_PIXELS, help="Max pixels for processor")
-    parser.add_argument("--min_pixels", type=int, default=DEFAULT_MIN_PIXELS, help="Min pixels for processor")
-    parser.add_argument("--use_lora", action="store_true", default=DEFAULT_USE_LORA, help="Enable LoRA loading")
-    parser.add_argument("--no_lora", action="store_false", dest="use_lora", help="Disable LoRA loading")
-    parser.set_defaults(use_lora=DEFAULT_USE_LORA)
-    parser.add_argument("--min_ckpt_step", type=int, default=DEFAULT_MIN_CKPT_STEP, help="Minimum checkpoint step to include")
-    parser.add_argument("--ckpt_interval", type=int, default=DEFAULT_CKPT_INTERVAL, help="Checkpoint step interval")
-    parser.add_argument("--out_prefix", default=DEFAULT_OUT_PREFIX, help="Output jsonl filename suffix/prefix")
-    parser.add_argument("--out_dir", default=DEFAULT_OUTPUT_DIR, help="Directory to save outputs (jsonl and failed logs)")
-    parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE, help="Generation temperature")
-    parser.add_argument("--top_p", type=float, default=DEFAULT_TOP_P, help="Top-p for generation")
-    parser.add_argument("--max_new_tokens", type=int, default=DEFAULT_MAX_NEW_TOKENS, help="Max new tokens")
+    parser = argparse.ArgumentParser(description="Batch inference for Qwen3-VL with optional LoRA checkpoints")
+    parser.add_argument("--base-model-name", default=base_model_name, help="Base model path or hub name")
+    parser.add_argument("--checkpoint-dir", default=checkpoint_dir, help="Directory containing LoRA checkpoints")
+    parser.add_argument("--test-json-path", default=test_json_path, help="Test JSON path")
+    parser.add_argument("--batch-size", type=int, default=BATCH_SIZE, help="Batch size per GPU")
+    parser.add_argument("--num-gpus", type=int, default=NUM_GPUS, help="Number of GPUs to use")
+    parser.add_argument("--max-pixels", type=int, default=MAX_pixels, help="Maximum pixels per image")
+    parser.add_argument("--min-pixels", type=int, default=MIN_pixels, help="Minimum pixels per image")
+    parser.add_argument("--use-lora", action=argparse.BooleanOptionalAction, default=USE_LORA, help="Whether to load LoRA checkpoints")
+    parser.add_argument("--min-checkpoint-step", type=int, default=min_checkpoint_step, help="Minimum checkpoint step to evaluate")
+    parser.add_argument("--checkpoint-step-interval", type=int, default=checkpoint_step_interval, help="Checkpoint step interval to evaluate")
+    parser.add_argument("--submission-suffix", default="train100_short", help="Suffix for submission filename")
     return parser.parse_args()
-# ==========================================================
 
 def set_qwen_seed(seed=42):
     random.seed(seed)
@@ -57,23 +53,27 @@ def set_qwen_seed(seed=42):
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
-def worker_inference(gpu_id, data_chunk, shared_submission_results, shared_failed_cases,
-                     lora_ckpt_path, base_model_name, use_lora,
-                     batch_size, max_pixels, min_pixels, gen_cfg):
+def worker_inference(gpu_id, data_chunk, shared_submission_results, shared_failed_cases, lora_ckpt_path, config):
     print(f"进程 {gpu_id} 启动，负责 {len(data_chunk)} 个样本，设备: cuda:{gpu_id}")
     
     torch.cuda.set_device(gpu_id)
     device = f"cuda:{gpu_id}"
     set_qwen_seed(42)
 
+    base_model = config["base_model_name"]
+    batch_size = config["batch_size"]
+    max_pixels = config["max_pixels"]
+    min_pixels = config["min_pixels"]
+    use_lora = config["use_lora"]
+
     # 1. 加载模型与 Processor
     try:
         model = AutoModelForImageTextToText.from_pretrained(
-            base_model_name,
+            base_model,
             torch_dtype=torch.bfloat16, 
             device_map={"": device}
         )
-        processor = AutoProcessor.from_pretrained(base_model_name)
+        processor = AutoProcessor.from_pretrained(base_model)
         processor.tokenizer.padding_side = 'left' 
 
         # 2. 可选加载 LoRA
@@ -105,8 +105,9 @@ def worker_inference(gpu_id, data_chunk, shared_submission_results, shared_faile
             conversations = sample.get("conversations", [])
             
             for turn in conversations:
-                role = "user" if turn["from"] == "human" else "assistant"
-                text = turn["value"]
+                turn_from = str(turn.get("from", "")).lower()
+                role = "user" if turn_from in {"human", "user"} else "assistant"
+                text = turn.get("value", "")
                 
                 if role == "user":
                     content = []
@@ -156,10 +157,10 @@ def worker_inference(gpu_id, data_chunk, shared_submission_results, shared_faile
             with torch.no_grad():
                 generated_ids = model.generate(
                     **inputs,
-                    max_new_tokens=gen_cfg["max_new_tokens"],
+                    max_new_tokens=512,
                     do_sample=True,
-                    temperature=gen_cfg["temperature"],
-                    top_p=gen_cfg["top_p"],
+                    temperature=1e-6,
+                    top_p=1.0,
                     pad_token_id=processor.tokenizer.pad_token_id,
                     eos_token_id=processor.tokenizer.eos_token_id,
                 )
@@ -185,38 +186,38 @@ def worker_inference(gpu_id, data_chunk, shared_submission_results, shared_faile
 
     print(f"进程 {gpu_id} 推理完成。")
 
-def main():
-    args = parse_args()
-
-    base_model_name = args.base_model
-    checkpoint_dir = args.checkpoint_dir
-    test_json_path = args.test_json
-    batch_size = args.batch_size
-    NUM_GPUS = args.num_gpus
-    MAX_pixels = args.max_pixels
-    MIN_pixels = args.min_pixels
-    USE_LORA = args.use_lora
-    min_checkpoint_step = args.min_ckpt_step
-    checkpoint_step_interval = args.ckpt_interval
-    out_prefix = args.out_prefix
-    out_dir = args.out_dir
-
-    os.makedirs(out_dir, exist_ok=True)
-
-    gen_cfg = {
-        "temperature": args.temperature,
-        "top_p": args.top_p,
-        "max_new_tokens": args.max_new_tokens,
-    }
-
+if __name__ == "__main__":
     try:
         set_start_method('spawn', force=True)
     except RuntimeError:
         pass
 
+    args = parse_args()
+
+    base_model_name = args.base_model_name
+    checkpoint_dir = args.checkpoint_dir
+    test_json_path = args.test_json_path
+    BATCH_SIZE = args.batch_size
+    NUM_GPUS = args.num_gpus
+    MAX_pixels = args.max_pixels
+    MIN_pixels = args.min_pixels
+    USE_LORA = args.use_lora
+    min_checkpoint_step = args.min_checkpoint_step
+    checkpoint_step_interval = args.checkpoint_step_interval
+    submission_suffix = args.submission_suffix
+
+    runtime_config = {
+        "base_model_name": base_model_name,
+        "batch_size": BATCH_SIZE,
+        "max_pixels": MAX_pixels,
+        "min_pixels": MIN_pixels,
+        "use_lora": USE_LORA,
+    }
+
     if not os.path.exists(test_json_path):
         print(f"Test file not found: {test_json_path}")
-        return
+        # 如果是本地测试没有文件，可以注释掉退出
+        # exit(1) 
     
     try:
         with open(test_json_path, 'r', encoding='utf-8') as f:
@@ -233,7 +234,9 @@ def main():
             active_gpus = NUM_GPUS
         
         if USE_LORA:
+            # Find checkpoints
             all_checkpoints = [d for d in os.listdir(checkpoint_dir) if d.startswith("checkpoint-") and os.path.isdir(os.path.join(checkpoint_dir, d))]
+            
             checkpoints = []
             for ckpt in all_checkpoints:
                 try:
@@ -243,14 +246,18 @@ def main():
                 except ValueError:
                     print(f"Skipping malformed checkpoint name: {ckpt}")
                     continue
+                
+            # Sort by step number assuming format checkpoint-XXXX
             try:
                 checkpoints.sort(key=lambda x: int(x.split('-')[-1]))
             except:
                 checkpoints.sort()
+            
             print(f"Found {len(checkpoints)} checkpoints: {checkpoints}")
         else:
+            # 仅使用基座模型
             checkpoints = [None]
-            print("USE_LORA=False: using base model only.")
+            print("USE_LORA=False: skipping checkpoint loading and using base model only.")
 
         for ckpt_name in checkpoints:
             lora_ckpt_path = os.path.join(checkpoint_dir, ckpt_name) if ckpt_name else None
@@ -265,19 +272,12 @@ def main():
 
             processes = []
             for rank in range(active_gpus):
-                p = Process(target=worker_inference, args=(
-                    rank,
-                    chunks[rank].tolist(),
-                    shared_submission_results,
-                    shared_failed_cases,
-                    lora_ckpt_path,
-                    base_model_name,
-                    USE_LORA,
-                    batch_size,
-                    MAX_pixels,
-                    MIN_pixels,
-                    gen_cfg,
-                ))
+                chunk = chunks[rank]
+                chunk_list = chunk.tolist() if hasattr(chunk, "tolist") else chunk
+                p = Process(
+                    target=worker_inference,
+                    args=(rank, chunk_list, shared_submission_results, shared_failed_cases, lora_ckpt_path, runtime_config)
+                )
                 p.start()
                 processes.append(p)
 
@@ -288,12 +288,13 @@ def main():
             
             if shared_failed_cases:
                 print(f"WARNING: {len(shared_failed_cases)} samples failed for {ckpt_label}.")
-                failed_path = os.path.join(out_dir, f"failed_inferences_{ckpt_label}.json")
-                with open(failed_path, 'w', encoding='utf-8') as f:
+                with open(f"failed_inferences_{ckpt_label}.json", 'w', encoding='utf-8') as f:
                     json.dump(list(shared_failed_cases), f, ensure_ascii=False, indent=2)
 
-            submission_file = os.path.join(out_dir, f"{ckpt_label}_{out_prefix}.jsonl")
+            # Save submission JSONL
+            submission_file = f"{ckpt_label}_{submission_suffix}.jsonl"     #######
             submission_data = list(shared_submission_results)
+            
             try:
                 submission_data.sort(key=lambda x: str(x['id']))
             except Exception:
@@ -302,8 +303,11 @@ def main():
             print(f"Generating {submission_file} with {len(submission_data)} entries...")
             with open(submission_file, 'w', encoding='utf-8') as f:
                 for entry in submission_data:
+                    # Format per requirements:
+                    # {"images": ["./images/xxx", "./images/xxx"], "solution": "..."}
                     formatted_images = [f"./images/{os.path.basename(img)}" for img in entry.get('images', [])]
                     solution = entry.get('response', "")
+                    
                     formatted_entry = {
                         "images": formatted_images,
                         "solution": solution
@@ -313,7 +317,3 @@ def main():
     
     except Exception as e:
         print(f"Main process error: {e}")
-
-
-if __name__ == "__main__":
-    main()
