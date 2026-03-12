@@ -1,18 +1,22 @@
-## 〇、配置LlamaFactory
+## 〇、配置环境
 ```bash
-git clone --depth 1 https://github.com/hiyouga/LlamaFactory.git
 conda env create -f ./config/environment.yml 
 conda activate lmf
 ```
 
-## 一、数据预处理、配置与训练(可选)
+## 一、训练(可选)
+0. 配置LlamaFactory
+```bash
+git clone --depth 1 https://github.com/hiyouga/LlamaFactory.git
+```
+
 1. 数据预处理与增强：拷贝训练数据集的`images`文件夹到`data/train`下，运行：
 ```bash
 python ./src/preproc/run_full_pipeline.py \
   --input_json json/original/train_grpo_1536_converted.json \
   --output_dir images/train/processed \
   --local_image_root images/train/images \
-  --json_final json/output/aug8_swap_crop6_clean.json \
+  --json_final json/outputs/aug8_swap_crop6_clean.json \
   --num_variations 6 \
   --groups 6
 ```
@@ -21,7 +25,7 @@ python ./src/preproc/run_full_pipeline.py \
 2. 数据集配置：填写以下字段到`LlamaFactory\data\dataset_info.json`
 ```
 "ForPhase1_100_aug8_crops_6times_clean": {
-    "file_name": "../../json/output/aug8_swap_crop6_clean.json",
+    "file_name": "../../json/outputs/aug8_swap_crop6_clean.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "conversations",
@@ -30,7 +34,7 @@ python ./src/preproc/run_full_pipeline.py \
     "tags": {
       "role_tag": "from",
       "content_tag": "value",
-      "user_tag": "user",
+      "user_tag": "human",
       "assistant_tag": "gpt",
       "system_tag": "system"
     }
