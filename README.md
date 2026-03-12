@@ -3,6 +3,7 @@
 conda env create -f ./config/environment.yml 
 conda activate lmf
 ```
+注：若GitHub连接超时，可以注释`config/environment.yml`中的`- git+https://github.com/hiyouga/LlamaFactory.git`以跳过LlamaFactory的安装，或者使用ssh连接并把命令改成`- git+ssh://git@github.com/hiyouga/LlamaFactory.git`
 
 ## 一、训练(可选)
 0. 配置LlamaFactory
@@ -51,6 +52,9 @@ lmf train ../config/training_args.yaml
 
 
 ## 二、推理(Validation阶段)
+0. 下载训练后权重: 通过网盘分享的文件：checkpoint-960.zip
+链接: https://pan.baidu.com/s/1Tg60WPP5atlsWwvg-uz4nA?pwd=3wmp 提取码: 3wmp
+
 1. 类似地，先对推理图像进行预处理
 拷贝validation阶段的`image`文件夹到`data/validation`下面，运行
 ```bash
@@ -94,6 +98,9 @@ python ./src/inf/fuse_and_fix.py \
 保存最终结果为`checkpoint-960_validation.jsonl`
 
 ## 三、推理(Test阶段)
+0. 下载训练后权重: 通过网盘分享的文件：checkpoint-960.zip
+链接: https://pan.baidu.com/s/1Tg60WPP5atlsWwvg-uz4nA?pwd=3wmp 提取码: 3wmp
+
 1. 类似地，先对推理图像进行预处理
 拷贝test阶段的`image`文件夹到`data/test`下面，运行
 ```bash
@@ -139,4 +146,5 @@ python ./src/inf/fuse_and_fix.py \
 ---
 
 **注1：由于数据预处理时采用了随机裁切，所以推理正确率会有一定波动**
+
 **注2：本方法采用thinking模型+answer模型，方便起见thinking模型的输出已经保存为`validation_template.jsonl`和`test_template.jsonl`，以供与answer模型输出结果融合**
