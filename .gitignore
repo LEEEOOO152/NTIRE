@@ -1,5 +1,6 @@
 LlamaFactory
 images/train/images
+images/train/processed
 images/validation/images
 images/test/images
 json/outputs/*.json

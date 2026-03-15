@@ -1,6 +1,6 @@
 bf16: true
 cutoff_len: 16384
-dataset: ForPhase1_100_aug8_crops_6times_clean
+dataset: ForPhase1_100_aug8_crops_6times_THINKING
 dataset_dir: data
 ddp_timeout: 180000000
 do_train: true
@@ -27,7 +27,7 @@ model_name_or_path: Qwen/Qwen3-VL-8B-Instruct
 neftune_noise_alpha: 5
 num_train_epochs: 10.0
 optim: adamw_torch
-output_dir: saves/Qwen3-VL-8B-Instruct/lora/train_aug8_crops6_clean
+output_dir: saves/Qwen3-VL-8B-Instruct/lora/THINKING
 packing: false
 per_device_train_batch_size: 1
 plot_loss: true
@@ -35,9 +35,9 @@ preprocessing_num_workers: 16
 quantization_bit: 4
 quantization_method: bnb
 report_to: none
-save_steps: 30
+save_steps: 50
 stage: sft
-template: qwen3_vl_nothink
+template: qwen3_vl
 trust_remote_code: true
 video_max_pixels: 65536
 video_min_pixels: 256

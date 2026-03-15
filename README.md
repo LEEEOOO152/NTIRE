@@ -5,7 +5,7 @@ conda activate lmf
 ```
 Note: If GitHub connection times out, you can comment out `- git+https://github.com/hiyouga/LlamaFactory.git` in `config/environment.yml` to skip installing LlamaFactory, or use SSH by changing it to `- git+ssh://git@github.com/hiyouga/LlamaFactory.git`.
 
-## 1. Training (optional)
+## 1. Training (For ANSWER model)
 0. Set up LlamaFactory
 ```bash
 git clone --depth 1 https://github.com/hiyouga/LlamaFactory.git
@@ -19,9 +19,11 @@ python ./src/preproc/run_full_pipeline.py \
   --local_image_root images/train/images \
   --json_final json/outputs/aug8_swap_crop6_clean.json \
   --num_variations 6 \
-  --groups 6
+  --groups 6 \
+  --strip-thinking
 ```
-This will generate the processed images and the JSON file.
+This will generate the processed images and the JSON file. 
+**Thinking Tags REMOVED**
 
 2. Dataset configuration: add the following entry to `LlamaFactory\data\dataset_info.json`
 ```
@@ -50,8 +52,51 @@ ln -s ../images images
 lmf train ../config/training_args.yaml
 ```
 
+---
 
-## 2. Inference (Validation phase)
+## 2. Training (For THINKING model)
+1. Data preprocessing & augmentation: copy the training dataset `images` folder into `data/train`, then run:
+```bash
+python ./src/preproc/run_full_pipeline.py \
+  --input_json json/original/train_grpo_1536_converted.json \
+  --output_dir images/train/processed \
+  --local_image_root images/train/images \
+  --json_final json/outputs/aug8_swap_crop6_THINKING.json \
+  --num_variations 6 \
+  --groups 6
+```
+This will generate the processed images and the JSON file. 
+**Thinking Tags SAVED**
+
+2. Dataset configuration: add the following entry to `LlamaFactory\data\dataset_info.json`
+```
+"ForPhase1_100_aug8_crops_6times_THINKING": {
+    "file_name": "../../json/outputs/aug8_swap_crop6_THINKING.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "images": "image"
+    },
+    "tags": {
+      "role_tag": "from",
+      "content_tag": "value",
+      "user_tag": "human",
+      "assistant_tag": "gpt",
+      "system_tag": "system"
+    }
+  },
+```
+
+3. Start training
+```bash
+cd LlamaFactory
+ln -s ../images images
+lmf train ../config/training_args_THINKING.yaml
+```
+
+---
+
+## 3. Inference (Validation phase)
 0. Download the trained weights: shared file `checkpoint-870.zip`
 Link：https://pan.quark.cn/s/83702e5e1b50
 
@@ -97,7 +142,7 @@ python ./src/inf/fuse_and_fix.py \
 ```
 The final output is saved as `checkpoint-870_validation.jsonl`.
 
-## 3. Inference (Test phase)
+## 4. Inference (Test phase)
 0. Download the trained weights: shared file `checkpoint-870.zip`
 Link：https://pan.quark.cn/s/83702e5e1b50
 

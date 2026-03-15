@@ -30,6 +30,11 @@ def main():
     parser.add_argument("--crops_per_image", type=int, default=None, help="Crops per image for step1 when save_crops enabled")
     parser.add_argument("--groups", type=int, default=None, help="Groups per item for step3")
     parser.add_argument("--crops_per_group", type=int, default=None, help="Crops per group for step3")
+    parser.add_argument(
+        "--strip-thinking",
+        action="store_true",
+        help="(Step3) Strip <thinking>...</thinking> blocks in crop_and_json_pipeline.py",
+    )
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)
@@ -73,6 +78,8 @@ def main():
         "--output", str(json_final),
         "--outdir", str(output_dir),
     ]
+    if args.strip_thinking:
+        cmd3.append("--strip-thinking")
     if args.crop_size is not None:
         cmd3 += ["--crop_size", str(args.crop_size)]
     if args.groups is not None:

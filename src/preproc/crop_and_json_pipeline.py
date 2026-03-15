@@ -89,7 +89,15 @@ def sync_prompt_tokens(value: str, num_images: int) -> str:
     return tokens
 
 
-def process(input_path: Path, output_path: Path, output_dir: Path, crop_size: int, num_groups: int, num_crops_per_group: int) -> None:
+def process(
+    input_path: Path,
+    output_path: Path,
+    output_dir: Path,
+    crop_size: int,
+    num_groups: int,
+    num_crops_per_group: int,
+    strip_thinking_tags: bool,
+) -> None:
     if not input_path.exists():
         raise FileNotFoundError(f"Input JSON not found: {input_path}")
 
@@ -109,14 +117,15 @@ def process(input_path: Path, output_path: Path, output_dir: Path, crop_size: in
         item_id = item.get('id')
         conversations = item.get('conversations', [])
 
-        # Clean thinking tags in-place and normalize "from":"user" -> "from":"human"
+        # Optionally strip thinking tags and normalize "from":"user" -> "from":"human"
         cleaned_conversations = []
         for msg in conversations:
             new_msg = msg.copy()
             if new_msg.get('from') == 'user':
                 new_msg['from'] = 'human'
             if isinstance(new_msg.get('value'), str):
-                new_msg['value'] = strip_thinking(new_msg['value'])
+                if strip_thinking_tags:
+                    new_msg['value'] = strip_thinking(new_msg['value'])
             cleaned_conversations.append(new_msg)
 
         image_field = item.get('image', [])
@@ -202,6 +211,7 @@ def main():
     parser.add_argument('--crop_size', type=int, default=CROP_SIZE, help='Crop size (square)')
     parser.add_argument('--groups', type=int, default=NUM_GROUPS, help='Number of crop groups per item')
     parser.add_argument('--crops_per_group', type=int, default=NUM_CROPS_PER_GROUP, help='Number of crops per group')
+    parser.add_argument('--strip-thinking', action='store_true', help='Strip <thinking>...</thinking> blocks from messages')
     args = parser.parse_args()
 
     process(
@@ -211,6 +221,7 @@ def main():
         crop_size=args.crop_size,
         num_groups=args.groups,
         num_crops_per_group=args.crops_per_group,
+        strip_thinking_tags=args.strip_thinking,
     )
 
 
