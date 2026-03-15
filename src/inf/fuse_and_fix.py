@@ -1,17 +1,3 @@
-#!/usr/bin/env python3
-"""
-Fuse answers from multiple checkpoint jsonl files, then fix <thinking> A/B consistency.
-
-Workflow
---------
-1) Fuse answers via weighted majority vote (same logic as fuse_checkpoints.py).
-2) Apply fused answers to the first checkpoint's solutions.
-3) Run the thinking-fixer (from fix_thinking_ab.py) to swap A/B in <thinking>
-   when it disagrees with <answer>.
-
-Adjust the CONFIG section below and run directly (no CLI required).
-"""
-
 from __future__ import annotations
 
 import json
@@ -23,13 +9,13 @@ from typing import Any, Dict, List, Sequence, Tuple
 
 PRESETS = {
     "validation": {
-        "ckpt_paths": [Path("src/inf/validation_template.jsonl"), Path("checkpoint-960_validation.jsonl")],
+        "ckpt_paths": [Path("src/inf/ForValidation.jsonl"), Path("checkpoint-960_validation.jsonl")],
         "ckpt_weights": [0, 1],
         "out_fused": Path("json/outputs/fused_intermediate.jsonl"),
         "out_fixed": Path("json/outputs/fused_and_fixed_validation.jsonl"),
     },
     "test": {
-        "ckpt_paths": [Path("src/inf/test_template.jsonl"), Path("checkpoint-960_test.jsonl")],
+        "ckpt_paths": [Path("src/inf/ForTest.jsonl"), Path("checkpoint-960_test.jsonl")],
         "ckpt_weights": [0, 1],
         "out_fused": Path("json/outputs/fused_intermediate.jsonl"),
         "out_fixed": Path("json/outputs/fused_and_fixed_test.jsonl"),
@@ -38,8 +24,7 @@ PRESETS = {
 
 # ==================== DEFAULT CONFIG ====================
 DEFAULT_CKPT_PATHS = [
-    Path("src/inf/validation_template.jsonl"),
-    Path("checkpoint-960_validation.jsonl"),
+
 ]
 DEFAULT_CKPT_WEIGHTS: Sequence[float] | None = [0, 1]
 DEFAULT_OUTPUT_FUSED = Path("json/outputs/fused_intermediate.jsonl")

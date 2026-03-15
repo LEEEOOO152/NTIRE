@@ -15,8 +15,8 @@ SCRIPT_DIR = Path(__file__).parent
 
 # Script locations
 BATCH_SCRIPT = SCRIPT_DIR / "batch_augment_and_json.py"
-SWAP_SCRIPT = SCRIPT_DIR / "enhance_a_b_change.py"
-CROP_SCRIPT = SCRIPT_DIR / "crop_and_json_pipeline.py"
+SWAP_SCRIPT = SCRIPT_DIR / "swap.py"
+CROP_SCRIPT = SCRIPT_DIR / "random_crop.py"
 
 
 def run_step(cmd):
