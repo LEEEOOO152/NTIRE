@@ -45,9 +45,9 @@ lmf train ../config/training_args.yaml
 
 ## 2. Validation
 
-Download the trained weights: `checkpoint-960.zip`
+Download the trained weights: `checkpoint-650.zip`
 
-Link: https://pan.baidu.com/s/1Tg60WPP5atlsWwvg-uz4nA?pwd=3wmp   Password: 3wmp
+Link: https://pan.baidu.com/s/1t_Z6VYQAtImkhwJ_bEWTyA?pwd=j5ac
 
 1. Preprocess inference images
 
@@ -57,16 +57,16 @@ python ./src/preproc/random_crop.py --preset validation
 ```
 This generates the processed images and JSON.
 
-2. Put `checkpoint-960` under the `model` folder, then run to generate the final result:
+2. Put `checkpoint-650` under the `model` folder, then run to generate the final result:
 ```bash
 python src/inf/inf.py --preset validation
 ```
 
 
 ## 3. Test
-Download the trained weights: `checkpoint-960.zip`
+Download the trained weights: `checkpoint-650.zip`
 
-Link: https://pan.baidu.com/s/1Tg60WPP5atlsWwvg-uz4nA?pwd=3wmp   Password: 3wmp
+Link: https://pan.baidu.com/s/1t_Z6VYQAtImkhwJ_bEWTyA?pwd=j5ac
 
 1. Preprocess inference images
 
@@ -76,7 +76,7 @@ python ./src/preproc/random_crop.py --preset test
 ```
 This generates the processed images and JSON.
 
-2. Put `checkpoint-960` under the `model` folder, then run to generate the final result:
+2. Put `checkpoint-650` under the `model` folder, then run to generate the final result:
 ```bash
 python src/inf/inf.py --preset test
 ```

@@ -14,7 +14,7 @@ DEFAULT_JSON_FINAL = Path("json/outputs/train_aug.json")
 SCRIPT_DIR = Path(__file__).parent
 
 # Script locations
-BATCH_SCRIPT = SCRIPT_DIR / "batch_augment_and_json.py"
+BATCH_SCRIPT = SCRIPT_DIR / "enhance_batch.py"
 SWAP_SCRIPT = SCRIPT_DIR / "swap.py"
 CROP_SCRIPT = SCRIPT_DIR / "random_crop.py"
 
