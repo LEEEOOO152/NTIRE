@@ -1,6 +1,6 @@
 bf16: true
 cutoff_len: 16384
-dataset: ForPhase1_100_aug8_crops_6times_clean
+dataset: NTIRE_train
 dataset_dir: data
 ddp_timeout: 180000000
 do_train: true

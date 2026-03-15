@@ -10,16 +10,13 @@ from transformers import AutoModelForImageTextToText, AutoProcessor
 from peft import PeftModel
 
 # ================= 配置区 =================
-base_model_name = "/public/home/mozhu/.cache/modelscope/hub/models/Qwen/Qwen3-VL-8B-Instruct"
-# base_model_name = "/public/home/mozhu/.cache/modelscope/hub/models/Qwen/Qwen3.5-9B-Base"
-checkpoint_dir = "/public/home/mozhu/LLaMA-Factory/saves/Qwen3-VL-8B-Instruct/lora/train_2026-03-02-10-38-11"
-# checkpoint_dir = "/public/home/mozhu/LLaMA-Factory/saves/Qwen3-VL-8B-Instruct/lora/train_2026-03-10-15-32-08"
+base_model_name = "Qwen/Qwen3-VL-8B-Instruct"
+checkpoint_dir = "models"
 # 修改为实际的测试集路径 
-test_json_path = "/public/home/mozhu/IQAdatasets/ForPhase3/inf_final_crops_shortprompt.json" 
-# test_json_path = "/public/home/mozhu/IQAdatasets/ForPhase2/inf_validation_phase2_crops.json"
-BATCH_SIZE = 4   #####
-NUM_GPUS = 2      ####
-MAX_pixels = 3538944  # 224*224，严格对齐训练参数
+test_json_path = "json/outputs/inf_validation_phase2_processed.json"
+BATCH_SIZE = 4   
+NUM_GPUS = 2      
+MAX_pixels = 3538944  
 MIN_pixels = 784
 
 # 是否加载 LoRA。若为 False，则直接使用基座模型，不加载任何 checkpoint。
@@ -27,11 +24,23 @@ USE_LORA = True
 
 min_checkpoint_step = 960  # 从这个 step 开始测试 (包含)
 checkpoint_step_interval = 30  # 每隔多少 step 取一个 checkpoint
-# ==========================================
+
+PRESETS = {
+    "validation": {
+        "test_json_path": "json/outputs/inf_validation_phase2_processed.json",
+        "submission_suffix": "validation",
+    },
+    "test": {
+        "test_json_path": "json/outputs/inf_final_processed.json",
+        "submission_suffix": "test",
+    },
+}
+# ============================================================
 
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Batch inference for Qwen3-VL with optional LoRA checkpoints")
+    parser.add_argument("--preset", choices=sorted(PRESETS.keys()), default=None, help="Quick preset for json path & suffix")
     parser.add_argument("--base-model-name", default=base_model_name, help="Base model path or hub name")
     parser.add_argument("--checkpoint-dir", default=checkpoint_dir, help="Directory containing LoRA checkpoints")
     parser.add_argument("--test-json-path", default=test_json_path, help="Test JSON path")
@@ -42,7 +51,7 @@ def parse_args():
     parser.add_argument("--use-lora", action=argparse.BooleanOptionalAction, default=USE_LORA, help="Whether to load LoRA checkpoints")
     parser.add_argument("--min-checkpoint-step", type=int, default=min_checkpoint_step, help="Minimum checkpoint step to evaluate")
     parser.add_argument("--checkpoint-step-interval", type=int, default=checkpoint_step_interval, help="Checkpoint step interval to evaluate")
-    parser.add_argument("--submission-suffix", default="train100_short", help="Suffix for submission filename")
+    parser.add_argument("--submission-suffix", default="validation", help="Suffix for submission filename")
     return parser.parse_args()
 
 def set_qwen_seed(seed=42):
@@ -193,6 +202,12 @@ if __name__ == "__main__":
         pass
 
     args = parse_args()
+
+    # Apply preset shortcuts (validation/test)
+    if args.preset in PRESETS:
+        preset_cfg = PRESETS[args.preset]
+        args.test_json_path = preset_cfg["test_json_path"]
+        args.submission_suffix = preset_cfg["submission_suffix"]
 
     base_model_name = args.base_model_name
     checkpoint_dir = args.checkpoint_dir

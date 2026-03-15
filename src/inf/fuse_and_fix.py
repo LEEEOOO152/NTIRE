@@ -21,19 +21,33 @@ from collections import Counter
 from pathlib import Path
 from typing import Any, Dict, List, Sequence, Tuple
 
+PRESETS = {
+    "validation": {
+        "ckpt_paths": [Path("src/inf/validation_template.jsonl"), Path("checkpoint-960_validation.jsonl")],
+        "ckpt_weights": [0, 1],
+        "out_fused": Path("json/outputs/fused_intermediate.jsonl"),
+        "out_fixed": Path("json/outputs/fused_and_fixed_validation.jsonl"),
+    },
+    "test": {
+        "ckpt_paths": [Path("src/inf/test_template.jsonl"), Path("checkpoint-960_test.jsonl")],
+        "ckpt_weights": [0, 1],
+        "out_fused": Path("json/outputs/fused_intermediate.jsonl"),
+        "out_fixed": Path("json/outputs/fused_and_fixed_test.jsonl"),
+    },
+}
+
 # ==================== DEFAULT CONFIG ====================
 DEFAULT_CKPT_PATHS = [
-    Path(r"C:\\Users\\leozx\\Downloads\\checkpoint-750_NOprompt_highpix_4bit_acc=6176.jsonl"),
-    Path(r"C:\\Users\\leozx\\Downloads\\checkpoint-1110_run1 (1).jsonl"),
+    Path("src/inf/validation_template.jsonl"),
+    Path("checkpoint-960_validation.jsonl"),
 ]
 DEFAULT_CKPT_WEIGHTS: Sequence[float] | None = [0, 1]
-DEFAULT_OUTPUT_FUSED = Path(r"C:\\Users\\leozx\\Downloads\\fused_intermediate.jsonl")
-DEFAULT_OUTPUT_FIXED = Path(r"C:\\Users\\leozx\\Downloads\\fused_and_fixed.jsonl")
+DEFAULT_OUTPUT_FUSED = Path("json/outputs/fused_intermediate.jsonl")
+DEFAULT_OUTPUT_FIXED = Path("json/outputs/fused_and_fixed_validation.jsonl")
 DEFAULT_STRICT_IMAGES = True
 DEFAULT_ORDER_INSENSITIVE = True
 DEFAULT_REMOVE_CROPS = True
 # =========================================================
-
 
 def parse_float_list(val: str | None) -> Sequence[float] | None:
     if val is None:
@@ -46,6 +60,12 @@ def parse_float_list(val: str | None) -> Sequence[float] | None:
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Fuse checkpoint answers then fix <thinking> A/B consistency.")
+    parser.add_argument(
+        "--preset",
+        choices=sorted(PRESETS.keys()),
+        default=None,
+        help="Quick preset for validation/test phases",
+    )
     parser.add_argument(
         "--ckpt_paths",
         nargs='+',
@@ -506,6 +526,13 @@ def fix_thinking_records(records: List[Dict[str, Any]]) -> tuple[List[Dict[str, 
 # ----------------- Main flow -----------------
 def main() -> None:
     args = parse_args()
+
+    if args.preset:
+        preset_cfg = PRESETS[args.preset]
+        args.ckpt_paths = preset_cfg["ckpt_paths"]
+        args.ckpt_weights = ",".join(str(w) for w in preset_cfg["ckpt_weights"]) if preset_cfg.get("ckpt_weights") else None
+        args.out_fused = preset_cfg["out_fused"]
+        args.out_fixed = preset_cfg["out_fixed"]
 
     ckpt_paths = args.ckpt_paths or DEFAULT_CKPT_PATHS
     if len(ckpt_paths) < 1:

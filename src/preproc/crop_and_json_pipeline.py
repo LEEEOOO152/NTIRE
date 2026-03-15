@@ -8,9 +8,26 @@ from typing import Dict, List
 from PIL import Image
 
 # 默认配置（可通过命令行覆盖）
-DEFAULT_INPUT_JSON = Path('/public/home/mozhu/lq/CONTEST1/phase2_aug_swap.json')
-DEFAULT_OUTPUT_JSON = Path('/public/home/mozhu/lq/CONTEST1/phase2_aug_swap_crop.json')
-DEFAULT_OUTPUT_DIR = Path('data/train/processed')
+DEFAULT_INPUT_JSON = Path('json/original/inf_validation_phase2.json')
+DEFAULT_OUTPUT_JSON = Path('json/outputs/inf_validation_phase2_processed.json')
+DEFAULT_OUTPUT_DIR = Path('images/validation/processed')
+
+# 预设，方便在 README 中用简化命令
+PRESETS = {
+    
+    "validation": {
+        "input": Path('json/original/inf_validation_phase2.json'),
+        "output": Path('json/outputs/inf_validation_phase2_processed.json'),
+        "outdir": Path('images/validation/processed'),
+        "groups": 1,
+    },
+    "test": {
+        "input": Path('json/original/inf_final.json'),
+        "output": Path('json/outputs/inf_final_processed.json'),
+        "outdir": Path('images/test/processed'),
+        "groups": 1,
+    },
+}
 
 CROP_SIZE = 224
 NUM_GROUPS = 6
@@ -196,6 +213,7 @@ def process(input_path: Path, output_path: Path, output_dir: Path, crop_size: in
 
 def main():
     parser = argparse.ArgumentParser(description="Generate crops, clean thinking tags, reorder images (c0 first), and update JSON.")
+    parser.add_argument('--preset', choices=sorted(PRESETS.keys()), default=None, help='Quick preset for common phases')
     parser.add_argument('--input', type=Path, default=DEFAULT_INPUT_JSON, help='Input JSON path')
     parser.add_argument('--output', type=Path, default=DEFAULT_OUTPUT_JSON, help='Output JSON path')
     parser.add_argument('--outdir', type=Path, default=DEFAULT_OUTPUT_DIR, help='Directory to save cropped images')
@@ -203,6 +221,14 @@ def main():
     parser.add_argument('--groups', type=int, default=NUM_GROUPS, help='Number of crop groups per item')
     parser.add_argument('--crops_per_group', type=int, default=NUM_CROPS_PER_GROUP, help='Number of crops per group')
     args = parser.parse_args()
+
+    # Apply preset overrides
+    if args.preset:
+        preset_cfg = PRESETS[args.preset]
+        args.input = preset_cfg["input"]
+        args.output = preset_cfg["output"]
+        args.outdir = preset_cfg["outdir"]
+        args.groups = preset_cfg["groups"]
 
     process(
         input_path=args.input,

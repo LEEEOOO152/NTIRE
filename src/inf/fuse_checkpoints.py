@@ -14,16 +14,8 @@ from collections import Counter
 from pathlib import Path
 from typing import Iterable, List, Dict, Any, Tuple, Sequence
 
-# ---- 配置区：直接在此填好路径即可运行，无需命令行参数 ----
-# 请将这里填入任意数量的 checkpoint jsonl 路径，至少 1 个。
+
 CKPT_PATHS = [
-    Path(r"C:\Users\leozx\Downloads\checkpoint-750_NOprompt_highpix_4bit_acc=6176.jsonl"),
-    Path(r"C:\Users\leozx\Downloads\checkpoint-1110_run1 (1).jsonl"),
-    # Path(r"C:\Users\leozx\Downloads\checkpoint-930_run1-1.jsonl"),
-    # Path(r"C:\Users\leozx\Downloads\checkpoint-930_run1-2.jsonl"),
-    # Path(r"C:\Users\leozx\Downloads\checkpoint-930_run1-3.jsonl"),
-    # Path(r"C:\Users\leozx\Downloads\checkpoint-930_run1-4.jsonl"),
-    # Path(r"C:\Users\leozx\Downloads\checkpoint-930_run1-5.jsonl"),
 
 ]
 # 若提供权重则与 CKPT_PATHS 对应；None 或长度不匹配时自动均分。

@@ -1,44 +1,9 @@
-#!/usr/bin/env python3
-"""
-Fix thinking A/B consistency in a JSONL file.
-
-The <answer> tag is assumed correct. Inside the <thinking> block, A and B
-references may be swapped. This script detects whether the thinking block
-concludes the *wrong* letter as better, and if so, swaps all A/B (and
-Left/Right) references within that thinking block only.
-
-Detection heuristic
--------------------
-Two complementary scoring strategies are combined:
-
-1. **Single-image sentences**: sentences that mention only A or only B get
-   scored by the positive-quality keywords they contain.
-
-2. **Dual-image sentences** (both A and B present): the common structure is
-   "Image X <positive-verb> … compared to Image Y, which <negative-verb>".
-   We find which image is the grammatical subject of a positive verb
-   (exhibits, demonstrates, has superior, …) and award it a point; the
-   image described after "compared to … which" is the loser and loses a point.
-   We also award negative points when an image is the subject of a negative
-   predicate (appears softer, shows less detail, …).
-
-The letter with the higher net score is what the thinking claims is better.
-If that disagrees with <answer>, we swap A↔B (and Left↔Right) in the block.
-"""
-
 from __future__ import annotations
 
 import json
 import re
 from pathlib import Path
 
-# ── paths ──────────────────────────────────────────────────────────────────
-INPUT_PATH  = Path(r"C:\Users\leozx\Downloads\fused8039.jsonl")
-OUTPUT_PATH = Path(r"C:\Users\leozx\Downloads\8039_fixed.jsonl")
-# ───────────────────────────────────────────────────────────────────────────
-
-THINKING_RE = re.compile(r"(<thinking>)(.*?)(</thinking>)", re.DOTALL | re.IGNORECASE)
-ANSWER_RE   = re.compile(r"<answer>\s*([AB])\s*</answer>", re.IGNORECASE)
 
 # Positive-quality keywords
 POSITIVE_WORDS = re.compile(
@@ -111,6 +76,14 @@ NEG_EXHIBITS_RE = re.compile(
     re.IGNORECASE,
 )
 
+
+# ── paths ──────────────────────────────────────────────────────────────────
+INPUT_PATH  = Path(r"C:\Users\leozx\Downloads\fused8039.jsonl")
+OUTPUT_PATH = Path(r"C:\Users\leozx\Downloads\8039_fixed.jsonl")
+# ───────────────────────────────────────────────────────────────────────────
+
+THINKING_RE = re.compile(r"(<thinking>)(.*?)(</thinking>)", re.DOTALL | re.IGNORECASE)
+ANSWER_RE   = re.compile(r"<answer>\s*([AB])\s*</answer>", re.IGNORECASE)
 
 def _letter(token: str) -> str:
     """Extract 'A' or 'B' from an 'Image A...' token."""

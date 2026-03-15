@@ -7,10 +7,10 @@ from copy import deepcopy
 import re
 
 # Defaults (override via CLI)
-DEFAULT_RAW_JSON_PATH = "/public/home/mozhu/lq/CONTEST1/phase2_aug.json"
-DEFAULT_NEW_JSON_PATH = "/public/home/mozhu/lq/CONTEST1/phase2_aug_swap.json"
-DEFAULT_SAVE_IMG_ROOT = "/public/home/mozhu/IQAdatasets/ForPhase2/aug_crops"
-DEFAULT_REL_BASE = "C:\\Users\\leozx\\Desktop\\p\\contest\\augmented_train_images"
+DEFAULT_RAW_JSON_PATH = ""
+DEFAULT_NEW_JSON_PATH = ""
+DEFAULT_SAVE_IMG_ROOT = ""
+DEFAULT_REL_BASE = ""
 
 # Globals initialized from defaults (overridden in main)
 RAW_JSON_PATH = DEFAULT_RAW_JSON_PATH

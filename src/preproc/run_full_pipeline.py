@@ -3,6 +3,14 @@ import subprocess
 import sys
 from pathlib import Path
 
+# Defaults aligned with README usage
+DEFAULT_INPUT_JSON = Path("json/original/train_grpo_1536_converted.json")
+DEFAULT_OUTPUT_DIR = Path("images/train/processed")
+DEFAULT_LOCAL_IMAGE_ROOT = Path("images/train/images")
+DEFAULT_NUM_VARIATIONS = 6
+DEFAULT_GROUPS = 6
+DEFAULT_JSON_FINAL = Path("json/outputs/train_aug.json")
+
 SCRIPT_DIR = Path(__file__).parent
 
 # Script locations
@@ -18,24 +26,24 @@ def run_step(cmd):
 
 def main():
     parser = argparse.ArgumentParser(description="Run full pipeline: augment -> swap halves -> crops + clean JSON.")
-    parser.add_argument("--input_json", required=True, help="Input JSON for augmentation (json0)")
-    parser.add_argument("--output_dir", required=True, help="Directory to save generated images (used by all steps)")
-    parser.add_argument("--local_image_root", required=True, help="Local image root for step 1 to find images")
+    parser.add_argument("--input_json", default=DEFAULT_INPUT_JSON, help="Input JSON for augmentation (json0)")
+    parser.add_argument("--output_dir", default=DEFAULT_OUTPUT_DIR, help="Directory to save generated images (used by all steps)")
+    parser.add_argument("--local_image_root", default=DEFAULT_LOCAL_IMAGE_ROOT, help="Local image root for step 1 to find images")
     parser.add_argument("--json1", default=None, help="Output JSON from step1 (defaults to <output_dir>/phase2_aug.json)")
     parser.add_argument("--json2", default=None, help="Output JSON from step2 (defaults to <output_dir>/phase2_aug_swap.json)")
     parser.add_argument("--json_final", default=None, help="Output JSON from step3 (final result). Defaults to <output_dir>/phase2_aug_swap_crop.json")
-    parser.add_argument("--num_variations", type=int, default=None, help="Variations per item for step1 (optional)")
+    parser.add_argument("--num_variations", type=int, default=DEFAULT_NUM_VARIATIONS, help="Variations per item for step1")
     parser.add_argument("--save_crops", action="store_true", help="Enable saving paired crops in step1")
     parser.add_argument("--crop_size", type=int, default=None, help="Crop size for step1 when save_crops enabled (and passed to step3)")
     parser.add_argument("--crops_per_image", type=int, default=None, help="Crops per image for step1 when save_crops enabled")
-    parser.add_argument("--groups", type=int, default=None, help="Groups per item for step3")
+    parser.add_argument("--groups", type=int, default=DEFAULT_GROUPS, help="Groups per item for step3")
     parser.add_argument("--crops_per_group", type=int, default=None, help="Crops per group for step3")
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)
     json1 = Path(args.json1) if args.json1 else output_dir / "phase2_aug.json"
     json2 = Path(args.json2) if args.json2 else output_dir / "phase2_aug_swap.json"
-    json_final = Path(args.json_final) if args.json_final else output_dir / "phase2_aug_swap_crop.json"
+    json_final = Path(args.json_final) if args.json_final else DEFAULT_JSON_FINAL
 
     # Step 1: batch augment
     cmd1 = [
