@@ -98,7 +98,7 @@ lmf train ../config/training_args_THINKING.yaml
 
 ## 3. Inference (Validation phase)
 0. Download the trained weights: shared file `checkpoint-870.zip`
-Link：https://pan.quark.cn/s/83702e5e1b50
+Link：https://pan.quark.cn/s/df6395653675
 
 1. Preprocess inference images
 Copy the validation-phase `image` folder into `data/validation`, then run:
@@ -144,7 +144,7 @@ The final output is saved as `checkpoint-870_validation.jsonl`.
 
 ## 4. Inference (Test phase)
 0. Download the trained weights: shared file `checkpoint-870.zip`
-Link：https://pan.quark.cn/s/83702e5e1b50
+Link：https://pan.quark.cn/s/df6395653675
 
 1. Preprocess inference images
 Copy the test-phase `image` folder into `data/test`, then run:
