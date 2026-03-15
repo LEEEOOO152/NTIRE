@@ -1,4 +1,4 @@
-## 配置环境
+## Environment setup
 ```bash
 conda env create -f ./config/environment.yml 
 git clone --depth 1 https://github.com/hiyouga/LlamaFactory.git
@@ -6,13 +6,15 @@ pip install git+https://github.com/hiyouga/LlamaFactory.git
 conda activate llamaf
 ```
 
-## 一、训练
-1. 数据预处理与增强：拷贝训练数据集的`images`文件夹到`data/train`下，运行：
+## 1. Training
+
+1. Data preprocessing & augmentation: copy the training dataset `images` folder to `data/train`, then run:
 ```bash
 python ./src/preproc/train_preproc.py
 ```
+augmentation -> swap -> random crops
 
-2. 数据集配置：填写以下字段到`LlamaFactory\data\dataset_info.json`
+2. Dataset config: add the following entry to `LlamaFactory\data\dataset_info.json`
 ```
 "NTIRE_train": {
     "file_name": "../../json/outputs/train_aug.json",
@@ -30,8 +32,10 @@ python ./src/preproc/train_preproc.py
     }
   },
 ```
+3. Replace `LlamaFactory\src\llamafactory\train\sft\trainer.py` with `src\train\trainer.py` to change how the loss is computed.
 
-3. 启动训练
+
+4. Start training
 ```bash
 cd LlamaFactory
 ln -s ../images images
@@ -39,50 +43,42 @@ lmf train ../config/training_args.yaml
 ```
 
 
-## 二、Validation
-0. 下载训练后权重: 通过网盘分享的文件：checkpoint-960.zip
-链接: https://pan.baidu.com/s/1Tg60WPP5atlsWwvg-uz4nA?pwd=3wmp 提取码: 3wmp
+## 2. Validation
 
-1. 类似地，先对推理图像进行预处理
-拷贝validation阶段的`image`文件夹到`data/validation`下面，运行
+Download the trained weights: `checkpoint-960.zip`
+
+Link: https://pan.baidu.com/s/1Tg60WPP5atlsWwvg-uz4nA?pwd=3wmp   Password: 3wmp
+
+1. Preprocess inference images
+
+Copy the validation `image` folder into `data/validation`, then run:
 ```bash
 python ./src/preproc/random_crop.py --preset validation
 ```
-生成处理过后的图像和json
+This generates the processed images and JSON.
 
-2. 下载`checkpoint-960`到`model`文件夹下，运行以下代码，生成answer
+2. Put `checkpoint-960` under the `model` folder, then run to generate the final result:
 ```bash
 python src/inf/inf.py --preset validation
 ```
 
-3. 融合thinking与answer
 
-```bash
-python ./src/inf/fuse_and_fix.py --preset validation
-```
-输出文件名为`checkpoint-960_validation.jsonl`
+## 3. Test
+Download the trained weights: `checkpoint-960.zip`
 
-## 三、Test
-0. 下载训练后权重: 通过网盘分享的文件：checkpoint-960.zip
-链接: https://pan.baidu.com/s/1Tg60WPP5atlsWwvg-uz4nA?pwd=3wmp 提取码: 3wmp
+Link: https://pan.baidu.com/s/1Tg60WPP5atlsWwvg-uz4nA?pwd=3wmp   Password: 3wmp
 
-1. 类似地，先对推理图像进行预处理
-拷贝test阶段的`image`文件夹到`data/test`下面，运行
+1. Preprocess inference images
+
+Copy the test `image` folder into `data/test`, then run:
 ```bash
 python ./src/preproc/random_crop.py --preset test
 ```
-生成处理过后的图像和json
+This generates the processed images and JSON.
 
-2. 生成仅answer
+2. Put `checkpoint-960` under the `model` folder, then run to generate the final result:
 ```bash
 python src/inf/inf.py --preset test
 ```
 
-3. 融合thinking与answer
 
-```bash
-python ./src/inf/fuse_and_fix.py --preset test
-```
-输出文件名为`checkpoint-960_test.jsonl`
-
----

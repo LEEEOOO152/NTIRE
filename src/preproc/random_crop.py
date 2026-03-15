@@ -39,8 +39,8 @@ def ensure_dir(directory: Path) -> None:
 
 
 def strip_thinking(text: str) -> str:
-    """Remove <thinking>...</thinking> blocks from a string."""
-    return re.sub(r"<thinking>.*?</thinking>\s*", "", text, flags=re.DOTALL)
+    """No-op: keep <thinking>...</thinking> blocks intact."""
+    return text
 
 
 def reorder_images(images: List[str]) -> List[str]:
@@ -90,8 +90,7 @@ def build_prompt(num_images: int) -> str:
     return (
         f"{image_tokens}\n"
         "The images provided include global views and detailed crop views. "
-        # "Please compare the image pair (Left vs Right) by analyzing global consistency and local details."
-        "The images are presented in the following order:\n1. Global view of the first section (Uncropped).\n2-5. Detailed crops of the first section.\n6. Global view of the second section (Cropped).\n7-10. Detailed crops of the second section.\nPlease compare the image pair (Left vs Right) by analyzing global consistency and local details."
+        "Please compare the image pair (Left vs Right) by analyzing global consistency and local details."
     )
 
 

@@ -76,7 +76,6 @@ def swap_img_half(img_path, save_path):
         cv2.imwrite(save_path, img_swapped, [cv2.IMWRITE_JPEG_QUALITY, 100])
     else:
         cv2.imwrite(save_path, img_swapped)
-    print(f"✅ 互换图片保存成功：{save_path}")
 
 def process_single_aug_sample(ori_sample):
     """处理单个扩充样本：路径互换+GPT文本分开替换+图片互换+ID重命名"""
